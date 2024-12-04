@@ -43,7 +43,8 @@ def removeElement (arr, target):
         i += 1
     return
 
-
+# http://tandy.cs.illinois.edu/dartmouth-cs-approx.pdf
+# Basically this idea - need to test fully.. no clue if it really works
 def vertex_cover_prob(graph):
     V = []
     
