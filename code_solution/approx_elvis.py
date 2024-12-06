@@ -27,6 +27,9 @@
 
 # VC = V
 
+import matplotlib.pyplot as plt
+import networkx as nx
+
 
 # https://www.geeksforgeeks.org/searching-algorithms-for-a-2d-arrays-matrix/
 # Didn't really work for removing due to decreasing array size but idea came
@@ -58,10 +61,19 @@ def vertex_cover_prob(graph):
     return V
 
 
+def visualize_graph(edges):
+    G = nx.Graph()
+    G.add_edges_from(edges)
+    
+    pos = nx.spring_layout(G)
+    nx.draw(G, pos, with_labels=True, node_size=700, node_color='skyblue', font_size=10, font_weight='bold')
+    plt.show()
+
+
 def main():
     # Read the input
     data = []
-    num_edges = input("Number of edges: ")
+    # num_edges = input("Number of edges: ")
     while True:
         try:
             # Read a line of input
@@ -71,7 +83,7 @@ def main():
             data.append(list(map(str, line.split())))
         except EOFError:  # Stop on EOF
             break
-    print(num_edges)
+    # print(num_edges)
     print(data)
     
     min_vertex = vertex_cover_prob(data)
