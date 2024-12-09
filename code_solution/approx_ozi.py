@@ -64,7 +64,7 @@ if __name__ == "__main__":
     # # example that breaks it from the article i stole this from
     # vertices = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'}
     # edges = {('a', 'b'), ('a', 'c'), ('a', 'd'), ('a', 'e'), ('b', 'h'), ('b', 'f'), ('c', 'i'), ('c', 'f'), ('d', 'j'), ('d', 'g'), ('e', 'k'), ('e', 'g')}
-    # print(vertex_cover(vertices, edges)) # will give us 7 vertices when it should be 4
+    # print(vertex_cover(vertices, edges)) # will give us 7 vertices when it should be 5
 
     # # also breaks with a triangle
     # vertices = {'a', 'b', 'c'}
