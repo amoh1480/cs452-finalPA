@@ -1,10 +1,8 @@
 """
     Approximate algorithm by Ozi Valdez.
     This is a greedy algorithm that chooses the vertex with the highest edge degree, adds it to the vertex cover, removes its edges, repeats.
-    Ummmmmm is this too similar to Elvis'? IDK! lol hehe
-    also IDK the runtime yet! whoops!
-    got the idea from here: https://people.cs.georgetown.edu/jthaler/ANLY550/lec20.pdf
-    bc all the other algorithm ideas i saw were like way too smart like linear programming and stuff like omg nah
+    Got the idea from here: https://people.cs.georgetown.edu/jthaler/ANLY550/lec20.pdf
+    
 """
 def vertex_cover(vertices, edges):
     output = set()
@@ -14,9 +12,8 @@ def vertex_cover(vertices, edges):
         graph[u].add(v)
         graph[v].add(u)
 
-    while edges:
-        best = max(graph, key = lambda vertex: len(graph[vertex])) # python lambda functions are weird
-        print(f"{best} with length {len(graph[best])}")
+    while edges: # O(E)
+        best = max(graph, key = lambda vertex: len(graph[vertex])) # python lambda functions are weird; also, runs in O(V)
 
         output.add(best)
 
@@ -60,9 +57,9 @@ if __name__ == "__main__":
     # print(vertex_cover(vertices, edges)) # should be B, C, D or some combination (3), which is da best
 
     # example from slides
-    vertices = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'}
-    edges = {('a', 'b'), ('a', 'c'), ('b', 'c'), ('c', 'd'), ('d', 'e'), ('d', 'f'), ('d', 'i'), ('i', 'f'), ('i', 'g'), ('i', 'h'), ('f', 'g'), ('g', 'h')}
-    print(vertex_cover(vertices, edges)) # should be B, C, D, I, G or some combination (5), which is da best
+    # vertices = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'}
+    # edges = {('a', 'b'), ('a', 'c'), ('b', 'c'), ('c', 'd'), ('d', 'e'), ('d', 'f'), ('d', 'i'), ('i', 'f'), ('i', 'g'), ('i', 'h'), ('f', 'g'), ('g', 'h')}
+    # print(vertex_cover(vertices, edges)) # should be B, C, D, I, G or some combination (5), which is da best
 
     # # example that breaks it from the article i stole this from
     # vertices = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'}
@@ -74,4 +71,4 @@ if __name__ == "__main__":
     # edges = {('a', 'b'), ('b', 'c'), ('a', 'c')}
     # print(vertex_cover(vertices, edges)) # gives us 2 when it should be 1
     
-    # main()
+    main()
