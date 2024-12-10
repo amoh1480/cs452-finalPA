@@ -39,6 +39,7 @@ def main():
     edges = process_files("./test_cases/large_graph.txt")
     graph = Graph(edges) 
     vertex_cover = exact_solution(graph)
+    print(len(vertex_cover))
     print(vertex_cover)
 
 def process_files(file_name):
