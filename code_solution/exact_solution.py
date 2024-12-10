@@ -1,20 +1,11 @@
 import itertools
 import time
-# https://www.geeksforgeeks.org/finding-minimum-vertex-cover-graph-using-binary-search/
-# curious solution 
 
 
-# Find the minimum vertex cover for a given graph, exact solution 
-# generate all the subsets of the vertices and see if they're a vertex cover
-# Solution inspired by this
-# https://stackoverflow.com/questions/66513948/brute-force-exact-algorithm-for-vertex-cover
 def exact_solution(graph):
     # Go through all the vertices of the graph
     for i in range(1, len(graph.vertices) + 1):
-        # Using itertools, create all subets of the graph
-        # using itetools combinations where the first input is the combinations and second one is 
-        # the amount of elements in the combination, based off i. Once it's vertified, you can return right away
-        # without checkign for a minimum, as it's the first one found from 0
+        # Check the subsets of size i 
         for subset in itertools.combinations(graph.vertices, i):
             # Check if the subset is a vertex cover
             if vertification(graph, subset):
@@ -26,22 +17,27 @@ def exact_solution(graph):
 def vertification(graph, vertex_cover):
     # go through all edges in the graph 
     for edge in graph.edges: # having your own class is goated #shout out mitre internship
-        # Check if in vertex cover or not 
-        # Edge is in the shape of (a, b) where a and b are vertices connected by the edge
+        # Check if in the vertex cover
         if edge[0] not in vertex_cover and edge[1] not in vertex_cover:
             return False
     return True
 
 
 def main():
-    # read in files 
+    # Start the time of the algorithm
     start_time = time.time()
+    # Read in the input from the files
     edges_amount = int(input().strip())
     edges = set([tuple(input().split()) for i in range(edges_amount)])
+    # Create graph that contains the edges and vertices
     graph = Graph(edges) 
+    # Run the vertex cover algorithm
     vertex_cover = exact_solution(graph)
-    end_time = time.time()  # End time
-    runtime = end_time - start_time  # Calculate runtime
+    # Find the runtime of the algo
+    end_time = time.time() 
+    runtime = end_time - start_time  
+
+    # print the results
     print(len(vertex_cover))
     print(" ".join(vertex_cover))
     print("Runtime: ", runtime)
