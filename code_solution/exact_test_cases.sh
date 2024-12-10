@@ -1,6 +1,6 @@
 # Simple triangle test
 echo "Simple Triangle Test"
-echo "Expected: {a}, {b}, or {c} of size 1"
+echo "Expected: {a, b} of size 2"
 python3 exact_solution.py <test_cases/simple-triangle.txt >output_files/exact_simple_triangle.txt
 echo "Actual output:"
 echo "$(cat output_files/exact_simple_triangle.txt)"
@@ -40,7 +40,7 @@ echo
 
 # Chain graph
 echo "Chain Graph"
-echo "Expected: {b, c, d} or {a, c, e} or some combination of size 3"
+echo "Expected: {b, c} or some combination of size 2"
 python3 exact_solution.py <test_cases/chain-graph.txt >output_files/exact_chain-graph.txt
 echo "Actual output:"
 echo "$(cat output_files/exact_chain-graph.txt)"
@@ -64,7 +64,7 @@ echo
 
 # Large graph
 echo "Extremely Large Graph"
-echo "Expected: Some combination of size 16
+echo "Expected: Some combination of size 16"
 python3 exact_solution.py <test_cases/large_graph.txt >output_files/exact_large_graph.txt
 echo "Actual output:"
 echo "$(cat output_files/exact_large_graph.txt)"

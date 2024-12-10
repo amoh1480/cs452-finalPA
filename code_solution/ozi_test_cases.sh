@@ -1,6 +1,6 @@
 # Simple triangle test
 echo "Simple Triangle Test"
-echo "Expected: {a}, {b}, or {c} of size 1"
+echo "Expected: {a, b} of size 2"
 python3 approx_ozi.py <test_cases/simple-triangle.txt >output_files/ozi_simple_triangle.txt
 echo "Actual output:"
 echo "$(cat output_files/ozi_simple_triangle.txt)"
