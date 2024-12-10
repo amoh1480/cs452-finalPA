@@ -1,7 +1,11 @@
 import itertools
 import time
 
-
+"""
+    Exact solution for minimum vertex cover.
+    This is a brute force algorithm that goes through all the subsets 
+    of the vertices and checks if they are a vertex cover.
+"""
 def exact_solution(graph):
     # Go through all the vertices of the graph
     for i in range(1, len(graph.vertices) + 1):
