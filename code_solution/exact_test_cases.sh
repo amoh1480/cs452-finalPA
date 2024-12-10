@@ -64,7 +64,7 @@ echo
 
 # Large graph
 echo "Extremely Large Graph"
-echo "Expected: {???} or some combination of size ????"
+echo "Expected: Some combination of size 16
 python3 exact_solution.py <test_cases/large_graph.txt >output_files/exact_large_graph.txt
 echo "Actual output:"
 echo "$(cat output_files/exact_large_graph.txt)"

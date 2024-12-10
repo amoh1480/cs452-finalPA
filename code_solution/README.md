@@ -1,1 +1,6 @@
-Create a folder named code_solution with the GIT repository.  Place your exact solution and approximate solution in this folder including a README file that provides instructions and exact commands to run your code.  Within the code_solution folder, create a test_cases folder that contains all test cases.  Create a shell script named run_test_cases.sh that executes your program on all test cases. 
+# RUNNING 
+To run these scripts, simply do "sh run_test_cases.sh" in the command line to run all three scripts. Each script generates an output file(s), and they are stored in the /code_solution/output_files folder.
+To run each script individually, simply do as before but choose the script that you want to run! For our group, we have: 
+- ozi_test_cases.sh that runs Ozi's approximate test cases
+- exact_test_cases.sh that runs Abdullah's exact test cases
+- run_test_cases.sh runs Elvis' (but consequently runs all three)

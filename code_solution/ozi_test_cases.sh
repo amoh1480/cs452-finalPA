@@ -40,7 +40,7 @@ echo
 
 # Chain graph
 echo "Chain Graph"
-echo "Expected: {b, c, d} or {a, c, e} or some combination of size 3"
+echo "Expected: {b, d} or some combination of size 2"
 python3 approx_ozi.py <test_cases/chain-graph.txt >output_files/ozi_chain-graph.txt
 echo "Actual output:"
 echo "$(cat output_files/ozi_chain-graph.txt)"
@@ -64,7 +64,7 @@ echo
 
 # Large graph
 echo "Extremely Large Graph"
-echo "Expected: {???} or some combination of size ????"
+echo "Expected: Some combination of size 16"
 python3 approx_ozi.py <test_cases/large_graph.txt >output_files/ozi_large_graph.txt
 echo "Actual output:"
 echo "$(cat output_files/ozi_large_graph.txt)"

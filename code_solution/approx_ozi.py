@@ -1,3 +1,5 @@
+import time
+
 """
     Approximate algorithm by Ozi Valdez.
     This is a greedy algorithm that chooses the vertex with the highest edge degree, adds it to the vertex cover, removes its edges, repeats.
@@ -19,7 +21,7 @@ def vertex_cover(vertices, edges):
 
         neighbors = graph[best]
 
-        for neighbor in neighbors:
+        for neighbor in neighbors: # O(E)
             if (best, neighbor) in edges:
                 edges.remove((best, neighbor))
             if (neighbor, best) in edges:
@@ -40,7 +42,10 @@ def main():
         vertices.add(edge[0])
         vertices.add(edge[1])
 
+    # a = time.time()
     cover = vertex_cover(vertices, edges)
+    # b = time.time()
+    # print(b - a)
 
     print(len(cover))
     print(" ".join(cover))
