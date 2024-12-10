@@ -1,5 +1,5 @@
 import itertools
-
+import sys
 
 # https://www.geeksforgeeks.org/finding-minimum-vertex-cover-graph-using-binary-search/
 # curious solution 
@@ -36,22 +36,13 @@ def vertification(graph, vertex_cover):
 
 def main():
     # read in files 
-    edges = process_files("./test_cases/large_graph.txt")
+    edges_amount = int(input().strip())
+    edges = set([tuple(input().split()) for i in range(edges_amount)])
     graph = Graph(edges) 
     vertex_cover = exact_solution(graph)
+    
     print(len(vertex_cover))
-    print(vertex_cover)
-
-def process_files(file_name):
-    # read in file
-    with open(file_name, "r") as f:
-        # read in all the lines 
-        lines = f.read().splitlines()
-        # get the first line because thats the number tehthehehehheh 
-        num_edges = int(lines[0])
-        # and then ya do the thing where the comprehension ya know 
-        edges = [tuple(line.split()) for line in lines[1:num_edges + 1]]
-    return edges
+    print(" ".join(vertex_cover))
 
 # custom graph, where edges are (a, b), ... , (?, ?)
 class Graph:
