@@ -1,1 +1,7 @@
-Create a folder named code_solution with the GIT repository.  Place your exact solution and approximate solution in this folder including a README file that provides instructions and exact commands to run your code.  Within the code_solution folder, create a test_cases folder that contains all test cases.  Create a shell script named run_test_cases.sh that executes your program on all test cases. 
+Instructions to run the code. 
+
+```shell
+./run_test_cases.sh
+```
+
+All output files will be put into the output_files folder and test cases can be found in its respective folder as well. 
