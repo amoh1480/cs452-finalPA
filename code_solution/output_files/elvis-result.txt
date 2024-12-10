@@ -1,0 +1,30 @@
+
+Time taken: 0.016ms
+Output for wiki-example1.txt:  ['a', 'b', 'c', 'e']
+
+Time taken: 0.010ms
+Output for wiki-example2.txt:  ['a', 'b', 'e', 'd']
+
+Time taken: 0.004ms
+Output for star-graph.txt:  ['a', 'b']
+
+Time taken: 0.008ms
+Output for bipartite-graph.txt:  ['a', 'd', 'c', 'f']
+
+Time taken: 0.017ms
+Output for slide-example.txt:  ['a', 'b', 'd', 'e', 'i', 'h']
+
+Time taken: 3.846ms
+Output for large_graph.txt:  ['f', '3', 'm', '1', 'n', '5', 'l', '6', 'g', 's', 'j', 'q', 'o', '0', 'k', '4', 'd', 'w', 'i', 'v', 'e', 'z', 'p', 'y', 'c', 'r', 'h', 'u', 'a', '2']
+
+Time taken: 0.006ms
+Output for chain-graph.txt:  ['a', 'b', 'd', 'e']
+
+Time taken: 0.016ms
+Output for greed-article.txt:  ['a', 'b', 'c', 'f', 'e', 'k']
+
+Time taken: 0.004ms
+Output for simple-triangle.txt:  ['a', 'b']
+
+Time taken: 0.014ms
+Output for complete-graph.txt:  ['a', 'b', 'c', 'e']

@@ -1,35 +1,5 @@
-################################################
-# Deterministic
-# assign arbitrary order to the edges
-
-# V = {}
-
-# foreach (edge e in edgeList)
-
-#   if both vertices are not taken
-
-#     take both vertices and remove incident edges
-
-#   else ignore both vertices
-
-# VC = V
-################################################
-# Probablistic
-# assign arbitrary order to the edges
-
-# V = {}
-
-# foreach (edge e in edgeList)
-
-#   take one endpoint at random
-
-#   Remove edges incident to the chosen endpoint
-
-# VC = V
-
-import matplotlib.pyplot as plt
-import networkx as nx
-
+import time
+import os
 
 # https://www.geeksforgeeks.org/searching-algorithms-for-a-2d-arrays-matrix/
 # Didn't really work for removing due to decreasing array size but idea came
@@ -39,7 +9,7 @@ def removeElement (arr, target):
     while i < len(arr): 
         for j in range(len(arr[i])):
             if arr[i][j] == target:
-                print("deleted: ", arr[i])
+                # print("deleted: ", arr[i])
                 del arr[i]
                 i -= 1 
                 break # Need this 
@@ -51,43 +21,40 @@ def removeElement (arr, target):
 def vertex_cover_prob(graph):
     V = []
     
+    start = time.time()
     for edge in graph: 
-        V.append(edge[0])
-        V.append(edge[1])
-        removeElement(graph, edge[0])
-        removeElement(graph, edge[1])
-        print(graph)
-    
+        edge0 = edge[0]
+        edge1 = edge[1]
+        V.append(edge0)
+        V.append(edge1)
+        removeElement(graph, edge0)
+        removeElement(graph, edge1)
+    end = time.time()
+        
+    # https://www.geeksforgeeks.org/how-to-check-the-execution-time-of-python-script/
+    print(f"\nTime taken: {(end-start)*10**3:.03f}ms")
     return V
 
 
-def visualize_graph(edges):
-    G = nx.Graph()
-    G.add_edges_from(edges)
-    
-    pos = nx.spring_layout(G)
-    nx.draw(G, pos, with_labels=True, node_size=700, node_color='skyblue', font_size=10, font_weight='bold')
-    plt.show()
-
-
 def main():
-    # Read the input
-    data = []
-    # num_edges = input("Number of edges: ")
-    while True:
-        try:
-            # Read a line of input
-            line = input().strip()
-            if not line:  # Stop if input is empty
-                break
-            data.append(list(map(str, line.split())))
-        except EOFError:  # Stop on EOF
-            break
-    # print(num_edges)
-    print(data)
+    # Directory containing the test case files
+    test_cases_dir = 'test_cases'
     
-    min_vertex = vertex_cover_prob(data)
-    print(min_vertex)
+    # Loop through each file in the test_cases directory
+    for filename in os.listdir(test_cases_dir):
+        if filename.endswith('.txt'):
+            file_path = os.path.join(test_cases_dir, filename)
+            data = []
+            with open(file_path, 'r') as file:
+                lines = file.readlines()
+                for line in lines[1:]:
+                    line = line.strip()
+                    if line:
+                        data.append(list(map(str, line.split())))
+            # print(f"Input from {filename}: ", data)
+            
+            min_vertex = vertex_cover_prob(data)
+            print(f"Output for {filename}: ", min_vertex)
     
     return
 
