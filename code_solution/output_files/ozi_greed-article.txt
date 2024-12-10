@@ -1,2 +1,2 @@
-6
-b g j k c a
+5
+d a b c e

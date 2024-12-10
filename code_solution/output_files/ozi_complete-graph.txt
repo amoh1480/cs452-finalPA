@@ -1,2 +1,2 @@
 5
-e c f b a
+b d a c f

@@ -1,7 +1,12 @@
-Instructions to run the code. 
+# RUNNING 
+To run these scripts, simply do 
 
 ```shell
-./run_test_cases.sh
+sh run_test_cases.sh
 ```
 
-All output files will be put into the output_files folder and test cases can be found in its respective folder as well. 
+in the command line to run all three scripts. Each script generates an output file(s), and they are stored in the /code_solution/output_files folder.
+To run each script individually, simply do as before but choose the script that you want to run! For our group, we have: 
+- `./ozi_test_cases.sh` that runs Ozi's approximate test cases
+- `./exact_test_cases.sh` that runs Abdullah's exact test cases
+- `./run_test_cases.sh` runs Elvis' (but consequently runs all three)

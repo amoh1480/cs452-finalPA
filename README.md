@@ -18,5 +18,3 @@
         - Generates a graph based off the amount of user inputted vertices. 
     - .sh files
         - Bash files used for running the scripts
-# RUNNING 
-- To run these scripts, simply do "sh BASHCRIPTNAME.sh" in the command line based off which script you would want to run. Then, go to the output_files folder to see the output of the script, matching the name of the algorithm run.  
