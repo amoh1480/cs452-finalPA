@@ -1,6 +1,5 @@
 import itertools
-import sys
-
+import time
 # https://www.geeksforgeeks.org/finding-minimum-vertex-cover-graph-using-binary-search/
 # curious solution 
 
@@ -36,13 +35,16 @@ def vertification(graph, vertex_cover):
 
 def main():
     # read in files 
+    start_time = time.time()
     edges_amount = int(input().strip())
     edges = set([tuple(input().split()) for i in range(edges_amount)])
     graph = Graph(edges) 
     vertex_cover = exact_solution(graph)
-    
+    end_time = time.time()  # End time
+    runtime = end_time - start_time  # Calculate runtime
     print(len(vertex_cover))
     print(" ".join(vertex_cover))
+    print("Runtime: ", runtime)
 
 # custom graph, where edges are (a, b), ... , (?, ?)
 class Graph:

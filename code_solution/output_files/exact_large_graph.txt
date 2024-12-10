@@ -1,0 +1,3 @@
+16
+j m n k c b e f a h l o d i g p
+Runtime:  1767.0831179618835
